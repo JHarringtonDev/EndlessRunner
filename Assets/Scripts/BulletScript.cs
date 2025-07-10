@@ -8,4 +8,11 @@ public class BulletScript : MonoBehaviour
     {
         transform.position -= new Vector3(0, 0, moveSpeed) * Time.deltaTime;
     }
+    public void increaseSpeed()
+    {
+        if (moveSpeed < 50)
+        {
+          moveSpeed++;
+        }
+    }
 }
