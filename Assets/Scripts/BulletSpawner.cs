@@ -1,16 +1,26 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] GameObject[] bullets;
+    [SerializeField] float fireDelay;
+    bool gameIsOver;
+
+    private void Start()
     {
-        
+        StartCoroutine(SpawnBullets());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator SpawnBullets()
     {
-        
+        while (gameIsOver == false)
+        {
+            Instantiate(bullets[Random.Range(0, 2)]);
+
+            yield return new WaitForSeconds(fireDelay);
+        }   
     }
+
 }

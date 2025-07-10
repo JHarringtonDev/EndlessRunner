@@ -7,6 +7,11 @@ public class BulletScript : MonoBehaviour
     void Update()
     {
         transform.position -= new Vector3(0, 0, moveSpeed) * Time.deltaTime;
+
+        if (transform.position.z <= -5)
+        {
+            Destroy(gameObject);
+        }
     }
     public void increaseSpeed()
     {
