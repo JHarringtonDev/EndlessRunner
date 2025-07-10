@@ -13,11 +13,8 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void increaseSpeed()
+    public void SetSpeed(int bulletSpeed)
     {
-        if (moveSpeed < 50)
-        {
-          moveSpeed++;
-        }
+       moveSpeed = bulletSpeed;
     }
 }

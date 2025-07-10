@@ -6,6 +6,7 @@ public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] bullets;
     [SerializeField] float fireDelay;
+    int bulletSpeed = 15;
     bool gameIsOver;
 
     private void Start()
@@ -17,7 +18,11 @@ public class BulletSpawner : MonoBehaviour
     {
         while (gameIsOver == false)
         {
-            Instantiate(bullets[Random.Range(0, 2)]);
+            GameObject clone = Instantiate(bullets[Random.Range(0, 2)]);
+
+            clone.GetComponent<BulletScript>().SetSpeed(bulletSpeed);
+
+            bulletSpeed++;
 
             yield return new WaitForSeconds(fireDelay);
         }   
