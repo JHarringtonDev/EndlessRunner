@@ -12,6 +12,7 @@ public class BulletSpawner : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SpawnBullets());
+        Debug.Log("logged");
     }
 
     IEnumerator SpawnBullets()

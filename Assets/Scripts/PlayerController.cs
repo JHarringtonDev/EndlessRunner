@@ -3,7 +3,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     bool isLeft = false;
-    
+
+    [SerializeField] int playerHealth;
     [SerializeField] int positionX;
 
     // Update is called once per frame
@@ -24,6 +25,18 @@ public class PlayerController : MonoBehaviour
                     isLeft = true;
                 }
             }
+        }
+    }
+
+    public void TakeDamage()
+    {
+        if(playerHealth > 0)
+        {
+            playerHealth--;
+        }
+        else if (playerHealth == 0)
+        {
+            Debug.Log("End game show stats");
         }
     }
 }

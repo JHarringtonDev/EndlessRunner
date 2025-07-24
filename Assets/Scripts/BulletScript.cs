@@ -3,6 +3,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     [SerializeField] int moveSpeed;
+    [SerializeField] bool isCollectible;
     // Update is called once per frame
     void Update()
     {
@@ -16,5 +17,26 @@ public class BulletScript : MonoBehaviour
     public void SetSpeed(int bulletSpeed)
     {
        moveSpeed = bulletSpeed;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<PlayerController>() != null)
+        {
+            PlayerController player = other.gameObject.GetComponent<PlayerController>();
+            
+            if(isCollectible)
+            {
+                Debug.Log("collectible");
+            }
+            else
+            {
+                player.TakeDamage();
+            }
+        }
+        else
+        {
+            Debug.Log("script not found");
+        }
     }
 }
