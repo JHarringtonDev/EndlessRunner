@@ -18,7 +18,7 @@ public class BulletSpawner : MonoBehaviour
     {
         while (gameIsOver == false)
         {
-            GameObject clone = Instantiate(bullets[Random.Range(0, 2)]);
+            GameObject clone = Instantiate(bullets[Random.Range(0, bullets.Length)]);
 
             clone.GetComponent<BulletScript>().SetSpeed(bulletSpeed);
 

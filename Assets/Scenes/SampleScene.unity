@@ -1020,6 +1020,8 @@ MonoBehaviour:
   bullets:
   - {fileID: 458558570295155676, guid: dc85636e4d8bfe047b50ac04a72b811c, type: 3}
   - {fileID: 3118655428822035725, guid: 1fd6b078e9ae12743bc9589298454919, type: 3}
+  - {fileID: 4223980609818268233, guid: bf8b0ed50d797ef4c8c9e6accee9b336, type: 3}
+  - {fileID: 5973677152632489316, guid: 26685f32812b21c449c4156da36d64ad, type: 3}
   fireDelay: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
