@@ -33,10 +33,17 @@ public class BulletScript : MonoBehaviour
             {
                 player.TakeDamage();
             }
+
+            EndCollision();
         }
         else
         {
             Debug.Log("script not found");
         }
+    }
+
+    void EndCollision()
+    {
+        Destroy(gameObject);
     }
 }
