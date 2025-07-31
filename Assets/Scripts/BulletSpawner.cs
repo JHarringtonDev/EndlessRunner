@@ -29,4 +29,9 @@ public class BulletSpawner : MonoBehaviour
         }   
     }
 
+    public void increaseSpeed()
+    {
+        bulletSpeed++;
+    }
+
 }
