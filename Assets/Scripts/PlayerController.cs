@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.touchCount > 0)
+        if(Input.touchCount > 0 && Time.timeScale != 0)
         {
             if (Input.touches[0].phase == TouchPhase.Began)
             {
@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         else if (playerHealth == 0)
         {
             Debug.Log("End game show stats");
+            Time.timeScale = 0;
         }
     }
 }
