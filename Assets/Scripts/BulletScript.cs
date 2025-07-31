@@ -19,6 +19,11 @@ public class BulletScript : MonoBehaviour
 
         if (transform.position.z <= -5)
         {
+            if(!isCollectible)
+            {
+                scoreKeeper.AddScore();
+            }
+
             Destroy(gameObject);
         }
     }
