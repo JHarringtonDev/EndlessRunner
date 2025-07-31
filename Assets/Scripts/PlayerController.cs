@@ -3,9 +3,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     bool isLeft = false;
+    HealthDisplay healthDisplay;
 
     [SerializeField] int playerHealth;
     [SerializeField] int positionX;
+
+    private void Awake()
+    {
+        healthDisplay = FindFirstObjectByType<HealthDisplay>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -30,14 +36,18 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage()
     {
-        if(playerHealth > 0)
+
+        if(playerHealth >= 1)
         {
             playerHealth--;
+            healthDisplay.DisplayCurrentHealth(playerHealth);
         }
-        else if (playerHealth == 0)
+
+        if (playerHealth <= 0)
         {
             Debug.Log("End game show stats");
             Time.timeScale = 0;
         }
+
     }
 }
