@@ -1,8 +1,10 @@
+using TMPro;
 using UnityEngine;
 
 public class ScoreKeeper : MonoBehaviour
 {
     [SerializeField] int gameScore;
+    [SerializeField] TextMeshProUGUI scoreDisplay;
 
     BulletSpawner spawner;
 
@@ -15,5 +17,6 @@ public class ScoreKeeper : MonoBehaviour
     {
         gameScore++;
         spawner.increaseSpeed();
+        scoreDisplay.text = "Score: " + gameScore;
     }
 }
