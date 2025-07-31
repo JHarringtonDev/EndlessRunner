@@ -2,9 +2,17 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    ScoreKeeper scoreKeeper;
+
     [SerializeField] int moveSpeed;
     [SerializeField] bool isCollectible;
     // Update is called once per frame
+
+    private void Awake()
+    {
+        scoreKeeper = FindFirstObjectByType<ScoreKeeper>();
+    }
+
     void Update()
     {
         transform.position -= new Vector3(0, 0, moveSpeed) * Time.deltaTime;
@@ -28,6 +36,7 @@ public class BulletScript : MonoBehaviour
             if(isCollectible)
             {
                 Debug.Log("collectible");
+                scoreKeeper.AddScore();
             }
             else
             {
